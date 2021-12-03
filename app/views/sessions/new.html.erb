@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+
+    <h2 id="log-in-title">欢迎来到成语接龙</h2>
+    <div class="auth-form well">
+    <%= form_for(User.new, url: login_path) do |f| %>
+      <%=f.label '用户名' %>
+      <div class="input-group">
+          <%= text_field_tag :username, nil, placeholder: '请任意输入一个用户名进行学习', class: "form-control"%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登录", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

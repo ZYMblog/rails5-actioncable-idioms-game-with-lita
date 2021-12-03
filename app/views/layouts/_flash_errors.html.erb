@@ -1,0 +1,21 @@
+<% if flash.notice %>
+  <div class="alert alert-danger">
+      <% flash.notice.each do |type, messages|%>
+        
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><%messages.each do |msg|%>
+          <%=type%> <%=msg%>
+        <%end%>
+      <%end%>
+  </div>
+<%end%>
+<!--<i class="glyphicon glyphicon-exclamation-sign">
+<button type="button" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-user"></span> User
+</button>
+<button type="button" class="btn btn-default btn-sm">
+    <span class="glyphicon glyphicon-user"></span> User
+</button>
+<button type="button" class="btn btn-default btn-xs">
+    <span class="glyphicon glyphicon-user"></span> User
+</button>
+</i>-->

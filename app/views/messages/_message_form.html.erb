@@ -1,0 +1,16 @@
+<%= form_for message, remote: true, authenticity_token: true do |f| %>
+  <%= f.label '请输入成语' %>:
+  <%= f.text_area :content, class: "form-control", placeholder: '回车键发送', data: {textarea: "message"} %>
+
+  <%= f.hidden_field :chat_id, value: chat.id %>
+  <%= f.submit "send", class: "btn btn-primary", style: "display: none", data: {send: "message"} %>
+<% end %>
+
+<!--
+<%= form_for message , url: "javascript:;", remote: true do |f|%>
+  <%= f.text_field :content, class: "form-control", data: {textarea: "message"}, autocomplete: "off", placeholder: "回车键发送" %>
+
+  <%= f.hidden_field :chat_id, value: chat.id %>
+  <%= f.submit "", class: "chat_send_btn", data: {send: "message"}%>
+<% end %>
+-->

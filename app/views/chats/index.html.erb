@@ -1,0 +1,19 @@
+<div class="row col-md-8 col-md-offset-2">
+  <h2>单机成语接龙模式</h2>
+
+  <div class="panel panel-default">
+    <% if current_user.messages.any? %>
+    <div class="panel-body" id="messages" style="height: 500px; overflow: auto">
+      <%= render partial: '/messages/message', collection: @messages %>
+    </div>
+    <%else%>
+    <div class="panel-body hidden" id="messages">
+    </div>
+    <%end%>
+  </div>
+  <%= render partial: '/messages/message_form', locals: {message: @message, chat: @chat}%>
+</div>
+
+<script>
+  $('#messages').scrollTop( $('#messages')[0].scrollHeight );
+</script>
