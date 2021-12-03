@@ -16,6 +16,7 @@ class Message < ApplicationRecord
       ActionCable.server.broadcast('messages', message: self.content, user: self.user.username)
       sleep 1
       cy = Idiom.find_by(name: self.content)
+      # ActionCable.server.broadcast('messages', message: self.content, user: self.user.username)
       if cy.present?
         contents = Idiom.where('name like ?', "#{cy.name[-1]}%").pluck(:name).sample(5)
         content = contents.map do |word|

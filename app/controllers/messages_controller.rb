@@ -6,6 +6,8 @@ class MessagesController < ApplicationController
     if message.save!
       head :ok
     end
+    # respond_to do |format|
+    #   format.js
   end
 
   private
